@@ -17,6 +17,6 @@
     "js-yaml": "^3.3.0",
     "lodash": "^4.17.15",
     "moment": "^2.24.0",
-    "swagger-tools": "0.10.1"
+    "swagger-tools": "^0.10.4"
   }
 }
