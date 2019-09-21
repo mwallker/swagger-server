@@ -1,5 +1,5 @@
 'use strict';
-
+const db = require('../db');
 
 /**
  * Get settings by type
@@ -10,13 +10,7 @@
  **/
 exports.getSettingsByType = function(type) {
   return new Promise(function(resolve, reject) {
-    var examples = {};
-    examples['application/json'] = "{}";
-    if (Object.keys(examples).length > 0) {
-      resolve(examples[Object.keys(examples)[0]]);
-    } else {
-      resolve();
-    }
+    resolve(db.settings[type]);
   });
 }
 
@@ -29,9 +23,11 @@ exports.getSettingsByType = function(type) {
  * body Object Update settings
  * no response value expected for this operation
  **/
-exports.updatebankSettings = function(type,body) {
+exports.updatebankSettings = function(type, body) {
   return new Promise(function(resolve, reject) {
-    resolve();
+    db.settings[type] = body
+
+    resolve(body);
   });
 }
 

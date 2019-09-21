@@ -213,8 +213,8 @@ paths:
         400:
           description: "Invalid id supplied"
         404:
-          description: "Event not found"
-      x-swagger-router-controller: "Event"
+          description: "Settings not found"
+      x-swagger-router-controller: "Settings"
     put:
       tags:
       - "settings"
@@ -238,7 +238,7 @@ paths:
       responses:
         default:
           description: "successful operation"
-      x-swagger-router-controller: "Event"
+      x-swagger-router-controller: "Settings"
 securityDefinitions:
   petstore_auth:
     type: "oauth2"

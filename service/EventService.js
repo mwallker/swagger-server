@@ -1,7 +1,7 @@
 'use strict';
-const _ = require('lodash')
-const moment = require('moment')
-const db = require('../db')
+const _ = require('lodash');
+const moment = require('moment');
+const db = require('../db');
 var utils = require('../utils/writer.js');
 
 /**

@@ -44,3 +44,25 @@ module.exports.events = [
       ]
     }
 ]
+
+module.exports.settings = {
+    bank: {
+        requisites: '',
+        account: '',
+        operatorName: ''
+    },
+    taxes: {
+        organizationType: '',
+        bank: '',
+        taxSchema: '',
+        accountNumber: '',
+        inspectorPhone: ''
+    },
+    tasks: {
+        firstName: '',
+        lastName: '',
+        phone: '',
+        accountNumber: '',
+        UNP: ''
+    }
+}
