@@ -1,0 +1,313 @@
+{
+	"info": {
+		"_postman_id": "d08a0d41-48ea-4378-b709-e5dfe4e8290b",
+		"name": "Random",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "EVENTS",
+			"item": [
+				{
+					"name": "CREATE Event",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"date\": \"2019-09-10\",\n    \"type\": \"taxes\",\n    \"label\": \"Отправить сведения о сделке\",\n    \"number\": \"Номер\",\n    \"modified\": \"2019-09-15T12:45:00\",\n    \"created\": \"2019-09-15T12:46:00\",\n    \"comments\": [\n        {\n            \"id\": \"53534534\",\n            \"text\": \"Consectetur adipiscing elit.\",\n            \"time\": \"2019-09-15T12:45:00\"\n        },\n        {\n            \"id\": \"87423443\",\n            \"text\": \"Lorem ipsum dolor sit amet.\",\n            \"time\": \"2019-09-15T12:45:00\"\n        }\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8081/v2/event",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"v2",
+								"event"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UPDATE Event",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"date\": \"2019-09-10\",\n    \"type\": \"taxes\",\n    \"label\": \"Отправить сведения о сделке 2\",\n    \"number\": \"Номер\",\n    \"comments\": [\n        {\n            \"id\": \"53534534\",\n            \"text\": \"Consectetur adipiscing elit.\",\n            \"time\": \"2019-09-15T12:45:00\"\n        },\n        {\n            \"id\": \"87423443\",\n            \"text\": \"Lorem ipsum dolor sit amet.\",\n            \"time\": \"2019-09-15T12:45:00\"\n        }\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8081/v2/event/9769789645",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"v2",
+								"event",
+								"9769789645"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE Event",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8081/v2/event/454564456",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"v2",
+								"event",
+								"454564456"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET Events",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8081/v2/event",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"v2",
+								"event"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET Event by Id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8081/v2/event/9769789645",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"v2",
+								"event",
+								"9769789645"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "COMMENTS",
+			"item": [
+				{
+					"name": "DELETE Comment",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8081/v2/event/34534576/comment/87423443",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"v2",
+								"event",
+								"34534576",
+								"comment",
+								"87423443"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CREATE Comment",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"text\": \"Consectetur adipiscing elit.\",\n    \"time\": \"2019-09-15T12:45:00\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8081/v2/event/34534576/comment",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"v2",
+								"event",
+								"34534576",
+								"comment"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "SETTINGS",
+			"item": [
+				{
+					"name": "GET Settings By Type",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8081/v2/settings/bank",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"v2",
+								"settings",
+								"bank"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UPDATE Settings By Type",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"requisites\": \"\",\n    \"account\": \"\",\n    \"operatorName\": \"\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8081/v2/settings/bank",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"v2",
+								"settings",
+								"bank"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	]
+}
