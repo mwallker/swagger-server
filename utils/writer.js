@@ -7,6 +7,8 @@ exports.respondWithCode = function(code, payload) {
   return new ResponsePayload(code, payload);
 }
 
+exports.generateId = () => (Date.now() + Math.random() * Math.random() * 10000000).toFixed(0).toString()
+
 var writeJson = exports.writeJson = function(response, arg1, arg2) {
   var code;
   var payload;
@@ -38,7 +40,7 @@ var writeJson = exports.writeJson = function(response, arg1, arg2) {
   if(typeof payload === 'object') {
     payload = JSON.stringify(payload, null, 2);
   }
-  response.writeHead(code, {'Content-Type': 'application/json; charset=utf-8'});
+  response.writeHead(code, {'Content-Type': 'application/json;charset=utf-8'});
   response.writeHead(code, {'Access-Control-Allow-Origin': '*'});
   response.end(payload);
 }

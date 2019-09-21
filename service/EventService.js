@@ -1,54 +1,8 @@
 'use strict';
 const _ = require('lodash')
 const moment = require('moment')
-const db = [
-  {
-    date: '2019-09-10',
-    type: 'taxes',
-    label: 'Отправить сведения о сделке',
-    number: 'Номер',
-    id: '34534576',
-    modified: '2019-09-15T12:45:00',
-    created: '2019-09-15T12:46:00',
-    comments: [
-      {
-        id: '53534534',
-        text: 'Consectetur adipiscing elit.',
-        time: '2019-09-15T12:45:00'
-      },
-      {
-        id: '87423443',
-        text: 'Lorem ipsum dolor sit amet.',
-        time: '2019-09-15T12:45:00'
-      }
-    ]
-  },
-  {
-    date: '2019-09-12',
-    type: 'bank',
-    label: 'Отправить сведения о сделке',
-    number: 'Номер',
-    id: '454564456',
-    created: '2019-09-15T12:45:00'
-  },
-  {
-    date: '2019-09-01',
-    type: 'taxes',
-    label: 'Отправить сведения о сделке',
-    number: 'Номер',
-    id: '9769789645',
-    created: '2019-09-15T12:45:00',
-    comments: [
-      {
-        id: '45324784',
-        text: 'Consectetur adipiscing elit.',
-        time: '2019-09-19T16:45:00'
-      }
-    ]
-  }
-]
-
-const generateId = () => (Math.random() * 10000000 + Math.random() * 10000000).toFixed(0).toString()
+const db = require('../db')
+var utils = require('../utils/writer.js');
 
 /**
  * Create event
@@ -61,11 +15,11 @@ exports.createEvent = function(body) {
   return new Promise(function(resolve, reject) {
     const event = {
       ...body,
-      id: generateId(),
+      id: utils.generateId(),
       created: moment().format()
     }
 
-    db.push(event)
+    db.events.push(event)
 
     resolve(event);
   });
@@ -81,7 +35,10 @@ exports.createEvent = function(body) {
  **/
 exports.deleteEvent = function(id) {
   return new Promise(function(resolve, reject) {
-    resolve();
+    const event = _.find(db.events, { id })
+    db.events = _.pull(db.events, event)
+
+    resolve()
   });
 }
 
@@ -95,7 +52,7 @@ exports.deleteEvent = function(id) {
  **/
 exports.getEventById = function(id) {
   return new Promise(function(resolve, reject) {
-    const event = _.find(db, { id });
+    const event = _.find(db.events, { id });
 
     resolve(event);
   });
@@ -110,7 +67,7 @@ exports.getEventById = function(id) {
  **/
 exports.getEvents = function() {
   return new Promise(function(resolve, reject) {
-    resolve(db);
+    resolve(db.events);
   });
 }
 
@@ -125,15 +82,16 @@ exports.getEvents = function() {
  **/
 exports.updateEvent = function(id, body) {
   return new Promise(function(resolve, reject) {
-    const event = _.find(db, { id })
+    const event = _.find(db.events, { id })
     const updatedEvent = {
       ...event,
       ...body,
+      created: event.created,
       modified: moment().format()
     }
 
-    db = _.pull(db, event)
-    db.push(updatedEvent)
+    db.events = _.pull(db.events, event)
+    db.events.push(updatedEvent)
 
     resolve(updatedEvent)
   });
