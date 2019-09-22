@@ -41,6 +41,9 @@ var writeJson = exports.writeJson = function(response, arg1, arg2) {
     payload = JSON.stringify(payload, null, 2);
   }
   response.writeHead(code, {'Content-Type': 'application/json;charset=utf-8'});
+  response.writeHead(code, {'Access-Control-Allow-Methods': 'GET, POST, DELETE, PUT, PATCH, OPTIONS'});
   response.writeHead(code, {'Access-Control-Allow-Origin': '*'});
+  // response.writeHead(code, {'Access-Control-Allow-Headers': 'origin, content-type, accept'});
+  // response.writeHead(code, {'Access-Control-Max-Age': '0'});
   response.end(payload);
 }
