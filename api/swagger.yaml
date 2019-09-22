@@ -164,6 +164,28 @@ paths:
           description: "Event not found"
       x-swagger-router-controller: "Comment"
   /event/{id}/comment:
+    get:
+      tags:
+      - "event"
+      summary: "Get comments by event id"
+      description: ""
+      operationId: "getComments"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "id"
+        in: "path"
+        description: ""
+        required: true
+        type: "string"
+      responses:
+        200:
+          description: "successful operation"
+          schema:
+            type: "array"
+            items:
+              $ref: "#/definitions/Comment"
+      x-swagger-router-controller: "Comment"
     post:
       tags:
       - "comment"

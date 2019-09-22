@@ -50,3 +50,18 @@ exports.deleteComment = function(id, comment_id) {
   });
 }
 
+/**
+ * Get comments
+ * This can only be done by the logged in event.
+ *
+ * id String The name that needs to be deleted
+ * no response value expected for this operation
+ **/
+exports.getComments = function(id) {
+  return new Promise(function(resolve, reject) {
+    const event = _.find(db.events, { id });
+
+    resolve(event.comments);
+  });
+}
+
