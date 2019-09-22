@@ -47,22 +47,22 @@ module.exports.events = [
 
 module.exports.settings = {
     bank: {
-        requisites: '',
-        account: '',
-        operatorName: ''
+        requisites: 'GHF252DF',
+        account: '00113316',
+        operatorName: 'Алексей Сергеевич'
     },
     taxes: {
-        organizationType: '',
-        bank: '',
-        taxSchema: '',
-        accountNumber: '',
-        inspectorPhone: ''
+        organizationType: 'Что?',
+        bank: 'Куда?',
+        taxSchema: 'Какая?',
+        accountNumber: '2634555',
+        inspectorPhone: '2538735'
     },
     tasks: {
-        firstName: '',
-        lastName: '',
-        phone: '',
-        accountNumber: '',
-        UNP: ''
+        firstName: 'Василий',
+        lastName: 'Иванович',
+        phone: '2538735',
+        accountNumber: '30423413',
+        UNP: '194838383839567000'
     }
 }
