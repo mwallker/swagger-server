@@ -24,7 +24,7 @@ exports.createComment = function(id, body) {
     db.events = _.pull(db.events, event)
     db.events.push(event)
 
-    resolve(body);
+    resolve(comment);
   });
 }
 
