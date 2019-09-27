@@ -16,6 +16,7 @@ exports.createEvent = function(body) {
     const event = {
       ...body,
       id: utils.generateId(),
+      comments: [],
       created: moment().format()
     }
 
