@@ -18,6 +18,10 @@ exports.createComment = function(id, body) {
       ...body,
       id: utils.generateId()
     }
+    
+    if (!event.comments) {
+      event.comments = []
+    }
 
     event.comments.push(comment)
 
